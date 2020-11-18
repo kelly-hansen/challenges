@@ -9,3 +9,16 @@ function alternatingSums(a) {
     }
     return result;
 }
+
+function addBorder(picture) {
+    var topAndBot = '';
+    for (var i = 0; i < picture[0].length + 2; i++) {
+        topAndBot += '*';
+    }
+    for (var i = 0; i < picture.length; i++) {
+        picture[i] = '*' + picture[i] + '*';
+    }
+    picture.unshift(topAndBot);
+    picture.push(topAndBot)
+    return picture;
+}
