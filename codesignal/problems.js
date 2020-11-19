@@ -62,3 +62,27 @@ function arrayChange(inputArray) {
     }
     return count;
 }
+
+function palindromeRearranging(inputString) {
+    var singleLetter = 0;
+    var inputArray = inputString.split('');
+    for (var i = 0; i < inputArray.length; i++) {
+        if (inputArray[i]) {
+            for (var x = i + 1; x < inputArray.length; x++) {
+                if (inputArray[i] === inputArray[x]) {
+                    inputArray[i] = null;
+                    inputArray[x] = null;
+                    break;
+                }
+            }
+            if (inputArray[i]) {
+                if (singleLetter === 0) {
+                    singleLetter++;
+                } else {
+                return false;
+                }
+            }
+        }
+    }
+    return true;
+}
