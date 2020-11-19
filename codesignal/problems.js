@@ -49,3 +49,16 @@ function areSimilar(a, b) {
     }
     return true;
 }
+
+function arrayChange(inputArray) {
+    var count = 0;
+    for (var i = 1; i < inputArray.length; i++) {
+        if (inputArray[i] <= inputArray[i - 1]) {
+            do {
+                inputArray[i] += 1;
+                count++;
+            } while (inputArray[i] <= inputArray[i - 1]);
+        }
+    }
+    return count;
+}
