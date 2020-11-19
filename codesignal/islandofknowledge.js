@@ -34,3 +34,23 @@ function arrayMaximalAdjacentDifference(inputArray) {
     }
     return largest;
 }
+
+function isIPv4Address(inputString) {
+    var inputArray = inputString.split('.');
+    if (inputArray.length !== 4) {
+        return false;
+    }
+    for (var i = 0; i < inputArray.length; i++) {
+        if (!inputArray[i]) {
+            return false;
+        }
+        if (inputArray[i].length > 1 && inputArray[i][0] === '0') {
+            return false;
+        }
+        var x = Number(inputArray[i]);
+        if (x < 0 || x > 255 || isNaN(x)) {
+            return false;
+        }
+    }
+    return true;
+}
