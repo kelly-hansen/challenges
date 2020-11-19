@@ -120,9 +120,9 @@ function minesweeper(matrix) {
 
 function minesweeperFindNum(y, x, matrix) {
     var numOfMines = 0;
-    yMinus = y - 1;
+    var yMinus = y - 1;
     for (var i = 0; i < 3; i++) {
-        xMinus = x - 1;
+        var xMinus = x - 1;
         if (yMinus >= 0 && yMinus < matrix.length) {
             for (var z = 0; z < 3; z++) {
                 if (xMinus >= 0 && xMinus < matrix[0].length) {
