@@ -104,3 +104,37 @@ function boxBlurFindAvg(y, x, image) {
     avg = Math.floor(avg / 9);
     return avg;
 }
+
+function minesweeper(matrix) {
+    var result = [];
+    for (var i = 0; i < matrix.length; i++) {
+        result.push([]);
+    }
+    for (var y = 0; y < matrix.length; y++) {
+        for (var x = 0; x < matrix[0].length; x++) {
+            result[y].push(minesweeperFindNum(y, x, matrix));
+        }
+    }
+    return result;
+}
+
+function minesweeperFindNum(y, x, matrix) {
+    var numOfMines = 0;
+    yMinus = y - 1;
+    for (var i = 0; i < 3; i++) {
+        xMinus = x - 1;
+        if (yMinus >= 0 && yMinus < matrix.length) {
+            for (var z = 0; z < 3; z++) {
+                if (xMinus >= 0 && xMinus < matrix[0].length) {
+                    if (xMinus === x && yMinus === y) {
+
+                    } else if (matrix[yMinus][xMinus])
+                    numOfMines++;
+                }
+                xMinus++;
+            }
+        }
+        yMinus++;
+    }
+    return numOfMines;
+}
