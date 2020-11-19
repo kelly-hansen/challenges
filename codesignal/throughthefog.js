@@ -5,3 +5,12 @@ function circleOfNumbers(n, firstNumber) {
     }
     return result;
 }
+
+function depositProfit(deposit, rate, threshold) {
+    var years = 0;
+    while (deposit < threshold) {
+        deposit = deposit * (rate / 100) + deposit;
+        years++;
+    }
+    return years;
+}
