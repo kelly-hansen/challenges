@@ -24,3 +24,21 @@ function variableName(name) {
     }
     return true;
 }
+
+function alphabeticShift(inputString) {
+    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    var result = '';
+    for (var i = 0; i < inputString.length; i++) {
+        for (var x = 0; x < alphabet.length; x++) {
+            if (inputString[i] === alphabet[x]) {
+                if (x === alphabet.length - 1) {
+                    result += alphabet[0];
+                } else {
+                    result += alphabet[x + 1];
+                }
+                break;
+            }
+        }
+    }
+    return result;
+}
