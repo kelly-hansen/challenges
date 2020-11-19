@@ -75,3 +75,32 @@ function avoidObstacles(inputArray) {
         }
     }
 }
+
+function boxBlur(image) {
+    var result = [];
+    for (var i = 0; i < image.length - 2; i++) {
+        result.push([]);
+    }
+    var y = 1;
+    for (var i = 0; i < result.length; i++) {
+        var x = 1;
+        for (var z = 0; z < image[0].length - 2; z++) {
+            result[i].push(boxBlurFindAvg(y, x, image));
+            x++;
+        }
+        y++;
+    }
+    return result;
+}
+
+function boxBlurFindAvg(y, x, image) {
+    var avg = 0;
+    for (var i = 0; i < 3; i++) {
+        avg += image[y - 1][x - 1];
+        avg += image[y][x - 1];
+        avg += image[y + 1][x - 1];
+        x++;
+    }
+    avg = Math.floor(avg / 9);
+    return avg;
+}
