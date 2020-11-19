@@ -23,3 +23,14 @@ function areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight) {
         return false;
     }
 }
+
+function arrayMaximalAdjacentDifference(inputArray) {
+    var largest = 0;
+    for (var i = 1; i < inputArray.length; i++) {
+        var diff = Math.abs(inputArray[i] - inputArray[i - 1]);
+        if (diff > largest) {
+            largest = diff;
+        }
+    }
+    return largest;
+}
