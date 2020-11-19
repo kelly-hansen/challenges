@@ -14,3 +14,21 @@ function depositProfit(deposit, rate, threshold) {
     }
     return years;
 }
+
+function absoluteValuesSumMinimization(a) {
+    var closestSum;
+    var closestIndex = 0;
+    for (var i = 0; i < a.length; i++) {
+        var currentSum = 0;
+        for (var x = 0; x < a.length; x++) {
+            currentSum += Math.abs(a[x] - a[i]);
+        }
+        if (i === 0) {
+            closestSum = currentSum;
+        } else if (currentSum < closestSum) {
+            closestSum = currentSum;
+            closestIndex = i;
+        }
+    }
+    return a[closestIndex];
+}
