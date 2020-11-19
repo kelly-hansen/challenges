@@ -6,3 +6,14 @@ function arrayReplace(inputArray, elemToReplace, substitutionElem) {
     }
     return inputArray;
 }
+
+function evenDigitsOnly(n) {
+    var nString = n.toString();
+    var even = true;
+    for (var i = 0; i < nString.length; i++) {
+        if (parseInt(nString[i]) % 2 !== 0) {
+            return false;
+        }
+    }
+    return true;
+}
