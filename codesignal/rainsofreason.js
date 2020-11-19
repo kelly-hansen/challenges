@@ -17,3 +17,10 @@ function evenDigitsOnly(n) {
     }
     return true;
 }
+
+function variableName(name) {
+    if (name.match(/\W/) || name[0].match(/\d/)) {
+        return false;
+    }
+    return true;
+}
