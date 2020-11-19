@@ -54,3 +54,24 @@ function isIPv4Address(inputString) {
     }
     return true;
 }
+
+function avoidObstacles(inputArray) {
+    var highest = Math.max(...inputArray);
+    for (i = 2; i <= highest + 1; i++) {
+        var avoids = true;
+        var multiplier = 1;
+        do {
+            var x = i * multiplier;
+            for (var y = 0; y < inputArray.length; y++) {
+                if (x === inputArray[y]) {
+                    avoids = false;
+                    break;
+                }
+            }
+            multiplier++;
+        } while (x <= highest + 1);
+        if (avoids) {
+            return i;
+        }
+    }
+}
