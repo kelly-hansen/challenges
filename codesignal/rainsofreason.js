@@ -42,3 +42,23 @@ function alphabeticShift(inputString) {
     }
     return result;
 }
+
+function chessBoardCellColor(cell1, cell2) {
+    var lettersArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    var cell1CorNum;
+    var cell2CorNum;
+    for (var i = 0; i < lettersArr.length; i++) {
+        if (cell1[0] === lettersArr[i]) {
+            cell1CorNum = i + 1;
+        }
+        if (cell2[0] == lettersArr[i]) {
+            cell2CorNum = i + 1;
+        }
+    }
+    var cell1mod = ((cell1CorNum + parseInt(cell1[1])) % 2);
+    var cell2mod = ((cell2CorNum + parseInt(cell2[1])) % 2);
+    if (cell1mod === cell2mod) {
+        return true;
+    }
+    return false;
+}
