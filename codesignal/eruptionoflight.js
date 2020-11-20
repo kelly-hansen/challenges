@@ -16,3 +16,19 @@ function isBeautifulString(s) {
   }
   return true;
 }
+
+function findEmailDomain(address) {
+  var result = [];
+  var at = false;
+  for (var i = address.length - 1; i >= 0 && i < address.length; i--) {
+    if (at) {
+      result.push(address[i]);
+      i += 2;
+    }
+    if (address[i] === '@') {
+      at = true;
+      i += 2;
+    }
+  }
+  return result.join('');
+}
