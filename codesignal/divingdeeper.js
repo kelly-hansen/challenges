@@ -9,3 +9,20 @@ function extractEachKth(inputArray, k) {
 function firstDigit(inputString) {
   return inputString.match(/\d/)[0];
 }
+
+function differentSymbolsNaive(s) {
+  var uniqueArr = [];
+  for (var i = 0; i < s.length; i++) {
+    var unique = true;
+    for (var x = 0; x < uniqueArr.length; x++) {
+      if (s[i] === uniqueArr[x]) {
+        unique = false;
+        break;
+      }
+    }
+    if (unique) {
+      uniqueArr.push(s[i]);
+    }
+  }
+  return uniqueArr.length;
+}
