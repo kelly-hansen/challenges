@@ -32,3 +32,27 @@ function findEmailDomain(address) {
   }
   return result.join('');
 }
+
+function buildPalindrome(st) {
+  if (isPalindrome(st)) {
+    return st;
+  }
+  for (var i = 0; i < st.length; i++) {
+    var st2 = st + st.substring(0, i + 1).split('').reverse().join('');
+    if (isPalindrome(st2)) {
+      return st2;
+    }
+  }
+}
+
+function isPalindrome(st) {
+  for (var i = 0; i < st.length; i++) {
+    var backCount = st.length - 1 - i;
+    if (i >= backCount) {
+      return true;
+    }
+    if (st[i] !== st[backCount]) {
+      return false;
+    }
+  }
+}
