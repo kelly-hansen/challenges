@@ -5,3 +5,7 @@ function extractEachKth(inputArray, k) {
   }
   return inputArray;
 }
+
+function firstDigit(inputString) {
+  return inputString.match(/\d/)[0];
+}
