@@ -26,3 +26,17 @@ function differentSymbolsNaive(s) {
   }
   return uniqueArr.length;
 }
+
+function arrayMaxConsecutiveSum(inputArray, k) {
+  var maxSum = 0;
+  for (var i = 0; i + k - 1 < inputArray.length; i++) {
+    var sum = 0;
+    for (var x = i; x < i + k; x++) {
+      sum += inputArray[x];
+    }
+    if (sum > maxSum) {
+      maxSum = sum;
+    }
+  }
+  return maxSum;
+}
