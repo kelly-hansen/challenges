@@ -60,3 +60,18 @@ function digitDegree(n) {
   }
   return count;
 }
+
+function bishopAndPawn(bishop, pawn) {
+  var letters = [null, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+  var b;
+  var p;
+  for (var i = 1; i < letters.length; i++) {
+    if (bishop[0] === letters[i]) {
+      b = [i, parseInt(bishop[1])];
+    }
+    if (pawn[0] === letters[i]) {
+      p = [i, parseInt(pawn[1])];
+    }
+  }
+  return (Math.abs(b[0] - p[0]) === Math.abs(b[1] - p[1]));
+}
