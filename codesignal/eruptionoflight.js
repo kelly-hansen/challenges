@@ -56,3 +56,23 @@ function isPalindrome(st) {
     }
   }
 }
+
+function electionsWinners(votes, k) {
+  var max = Math.max(...votes);
+  var result = 0;
+  var maxes = 0;
+  for (var i = 0; i < votes.length; i++) {
+    if (votes[i] + k > max) {
+      result++;
+    }
+    if (votes[i] === max) {
+      maxes++;
+    }
+  }
+  if (k === 0 && maxes === 1) {
+    return maxes;
+  } else if (k === 0) {
+    return 0;
+  }
+  return result;
+}
