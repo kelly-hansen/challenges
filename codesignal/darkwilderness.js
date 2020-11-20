@@ -33,3 +33,16 @@ function knapsackLight(value1, weight1, value2, weight2, maxW) {
     return leastVal[0];
   }
 }
+
+function longestDigitsPrefix(inputString) {
+  var result = '';
+  for (var i = 0; i < inputString.length; i++) {
+    var match = inputString[i].match(/\d/);
+    if (match) {
+      result += inputString[i];
+    } else {
+      break;
+    }
+  }
+  return result;
+}
