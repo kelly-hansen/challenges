@@ -76,3 +76,23 @@ function electionsWinners(votes, k) {
   }
   return result;
 }
+
+function isMAC48Address(s) {
+  var regex = /[\dA-F]/;
+  if (s.length !== 17) {
+    return false;
+  }
+  for (var i = 0; i < s.length; i++) {
+    if ((i + 1) % 3 === 0) {
+      if (s[i] !== '-') {
+        return false;
+      }
+    } else {
+      if (!regex.test(s[i])) {
+        console.log('regex test fail');
+        return false;
+      }
+    }
+  }
+  return true;
+}
