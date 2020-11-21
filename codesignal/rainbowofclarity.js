@@ -52,3 +52,17 @@ function chessKnight(cell) {
   }
   return count;
 }
+
+function deleteDigit(n) {
+  var max = 0;
+  var a = n.toString().split('');
+  for (var i = 0; i < a.length; i++) {
+    var x = a.slice();
+    x.splice(i, 1);
+    var y = x.join('');
+    if (parseInt(y) > max) {
+      max = parseInt(y);
+    }
+  }
+  return max;
+}
