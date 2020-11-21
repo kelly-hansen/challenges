@@ -26,3 +26,29 @@ function lineEncoding(s) {
   }
   return result;
 }
+
+function chessKnight(cell) {
+  var pos = [];
+  var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+  for (var i  = 0; i < letters.length; i++) {
+    if (cell[0] === letters[i]) {
+      pos = [i, parseInt(cell[1] - 1)];
+    }
+  }
+  var count = 0;
+  var moves = [[-1, 1], [-2, 2]];
+  for (var i = 0; i < 2; i++) {
+    var alt = 1;
+    if (i === 1) {
+      alt = 0;
+    }
+    for (var x = 0; x < 2; x++) {
+      for (var y = 0; y < 2; y++) {
+        if (letters[pos[0] + moves[i][x]] && letters[pos[1] + moves[alt][y]]) {
+          count++;
+        }
+      }
+    }
+  }
+  return count;
+}
