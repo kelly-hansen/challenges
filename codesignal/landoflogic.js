@@ -19,3 +19,14 @@ function validTime(time) {
   let min = parseInt(time.slice(3));
   return (hour < 24 && min < 60);
 }
+
+function sumUpNumbers(inputString) {
+  const inputArr = inputString.split(/\D/);
+  let result = 0;
+  for (let i = 0; i < inputArr.length; i++) {
+    if (inputArr[i]) {
+      result += parseInt(inputArr[i]);
+    }
+  }
+  return result;
+}
