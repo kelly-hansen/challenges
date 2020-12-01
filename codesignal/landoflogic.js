@@ -74,3 +74,35 @@ function digitsProduct(product) {
   }
   return -1;
 }
+
+function isUnique(name, x, arr) {
+  for (let i = 0; i < x; i++) {
+    if (name === arr[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function fileNaming(names) {
+  for (let i = 0; i < names.length; i++) {
+    const name = names[i];
+    let newName = name;
+    let count = 1;
+    while (!isUnique(newName, i, names)) {
+      newName = name + '(' + count + ')';
+      count++;
+    }
+    names[i] = newName;
+  }
+  return names;
+}
+
+function messageFromBinaryCode(code) {
+  let result = '';
+  for (let i = 0; i < code.length; i += 8) {
+    const codeSnip = code.slice(i, i + 8);
+    result += String.fromCharCode(parseInt(codeSnip, 2));
+  }
+  return result;
+}
