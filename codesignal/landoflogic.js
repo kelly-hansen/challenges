@@ -30,3 +30,47 @@ function sumUpNumbers(inputString) {
   }
   return result;
 }
+
+function arraysEqual(arr1, arr2) {
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function differentSquares(matrix) {
+  const uniqueArr = [];
+  for (let i = 0; i < matrix.length - 1; i++) {
+    for (let x = 0; x < matrix[0].length - 1; x++) {
+      const test = [];
+      test.push(matrix[i][x], matrix[i][x + 1], matrix[i + 1][x], matrix[i + 1][x + 1]);
+      let isUnique = true;
+      for (let y = 0; y < uniqueArr.length; y++) {
+        if (arraysEqual(test, uniqueArr[y])) {
+          isUnique = false;
+          break;
+        }
+      }
+      if (isUnique) {
+        uniqueArr.push(test);
+      }
+    }
+  }
+  return uniqueArr.length;
+}
+
+function digitsProduct(product) {
+  for (let i = 1; i < 10000; i++) {
+    const numArr = i.toString().split('');
+    let currentProd = parseInt(numArr[0]);
+    for (let x = 1; x < numArr.length; x++) {
+      currentProd *= parseInt(numArr[x]);
+    }
+    if (currentProd === product) {
+      return i;
+    }
+  }
+  return -1;
+}
