@@ -106,3 +106,47 @@ function messageFromBinaryCode(code) {
   }
   return result;
 }
+
+function createMatrix(n) {
+  const result = [];
+  for (var i = 0; i < n; i++) {
+    const newArr = [];
+    for (var x = 0; x < n; x++) {
+      newArr.push(null);
+    }
+    result.push(newArr);
+  }
+  return result;
+}
+
+function findNext(currentInd, currentDir, matrix) {
+  const dir = [[0, 1], [1, 0], [0, -1], [-1, 0]];
+  const result = {};
+  let next = [currentInd[0] + dir[currentDir][0], currentInd[1] + dir[currentDir][1]];
+  if (!matrix[next[0]] || matrix[next[0]][next[1]] !== null) {
+    if (currentDir < 3) {
+      currentDir++;
+    } else {
+      currentDir = 0;
+    }
+    next = [currentInd[0] + dir[currentDir][0], currentInd[1] + dir[currentDir][1]];
+  }
+  console.log(next);
+  result.newInd = next;
+  result.newDir = currentDir;
+  return result;
+}
+
+function spiralNumbers(n) {
+  const result =  createMatrix(n);
+  result[0][0] = 1;
+  let dir = 0;
+  let currentInd = [0, 0];
+  for (let i = 2; i <= n * n; i++) {
+    const nextObj = findNext(currentInd, dir, result);
+    dir = nextObj.newDir;
+    currentInd = nextObj.newInd;
+    result[currentInd[0]][currentInd[1]] = i;
+  }
+  return result;
+}
