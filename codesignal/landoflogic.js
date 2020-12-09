@@ -150,3 +150,51 @@ function spiralNumbers(n) {
   }
   return result;
 }
+
+function checkSubGrids(grid, oneToNine) {
+  let x = 0;
+  let y = 0;
+  for (let q = 0; q < 3; q++) {
+    for (let w = 0; w < 3; w++) {
+      console.log(x, y);
+      let currentSubGrid = [];
+      for (let i = y; i < y + 3; i++) {
+        for (let j = x; j < x + 3; j++) {
+          currentSubGrid.push(grid[i][j]);
+        }
+      }
+      currentSubGrid.sort((a, b) => a - b);
+      console.log(currentSubGrid);
+      for (let i = 0; i < grid.length; i++) {
+        if (currentSubGrid[i] !== oneToNine[i]) {
+          return false;
+        }
+      }
+      if (x === 6) {
+        x = 0;
+      } else {
+        x += 3;
+      }
+    }
+    y += 3;
+  }
+  return true;
+}
+
+function sudoku(grid) {
+  let oneToNine = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  for (let i = 0; i < grid.length; i++) {
+    const currentRow = grid[i].slice().sort((a, b) => a - b);
+    let currentCol = [];
+    for (let x = 0; x < grid.length; x++) {
+      currentCol.push(grid[x][i]);
+    }
+    currentCol.sort((a, b) => a - b);
+    for (let x = 0; x < grid.length; x++) {
+      if (currentRow[x] !== oneToNine[x] || currentCol[x] !== oneToNine[x]) {
+        return false;
+      }
+    }
+  }
+  return checkSubGrids(grid, oneToNine);
+}
