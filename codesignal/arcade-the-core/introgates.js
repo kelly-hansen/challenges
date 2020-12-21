@@ -10,3 +10,7 @@ function largestNumber(n) {
   }
   return parseInt(result);
 }
+
+function candies(n, m) {
+  return Math.floor(m / n) * n;
+}
