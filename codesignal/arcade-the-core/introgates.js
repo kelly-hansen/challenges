@@ -14,3 +14,7 @@ function largestNumber(n) {
 function candies(n, m) {
   return Math.floor(m / n) * n;
 }
+
+function seatsInTheater(nCols, nRows, col, row) {
+  return (nRows - row) * (nCols - col + 1);
+}
