@@ -22,3 +22,11 @@ function seatsInTheater(nCols, nRows, col, row) {
 function maxMultiple(divisor, bound) {
 return Math.floor(bound / divisor) * divisor;
 }
+
+function circleOfNumbers(n, firstNumber) {
+  let result = firstNumber + (n / 2);
+  if (result > n - 1) {
+    result = result - n;
+  }
+  return result;
+}
