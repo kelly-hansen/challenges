@@ -18,3 +18,7 @@ function candies(n, m) {
 function seatsInTheater(nCols, nRows, col, row) {
   return (nRows - row) * (nCols - col + 1);
 }
+
+function maxMultiple(divisor, bound) {
+return Math.floor(bound / divisor) * divisor;
+}
