@@ -30,3 +30,13 @@ function circleOfNumbers(n, firstNumber) {
   }
   return result;
 }
+
+function lateRide(n) {
+  const th = Math.floor(n / 600);
+  n = n - (th * 600);
+  const h = Math.floor(n / 60);
+  n = n - (h * 60);
+  const tm = Math.floor(n / 10);
+  const m = n - (tm * 10);
+  return th + h + tm + m;
+}
