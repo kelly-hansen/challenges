@@ -40,3 +40,26 @@ function lateRide(n) {
   const m = n - (tm * 10);
   return th + h + tm + m;
 }
+
+//needs to be corrected
+function phoneCall(min1, min2_10, min11, s) {
+  if (s < min1) {
+    return 0;
+  }
+  let result = 1;
+  s -= min1;
+  for (let i = 2; i <= 10; i++) {
+    s -= min2_10;
+    if (s < 0) {
+      return result;
+    }
+    result++;
+  }
+  for (let i = 11; s > 0; i++) {
+    s -= min11;
+    if (s < 0) {
+      return result;
+    }
+    result++;
+  }
+}
