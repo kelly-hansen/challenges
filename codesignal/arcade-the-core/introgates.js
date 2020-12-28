@@ -41,7 +41,6 @@ function lateRide(n) {
   return th + h + tm + m;
 }
 
-//needs to be corrected
 function phoneCall(min1, min2_10, min11, s) {
   if (s < min1) {
     return 0;
@@ -55,7 +54,7 @@ function phoneCall(min1, min2_10, min11, s) {
     }
     result++;
   }
-  for (let i = 11; s > 0; i++) {
+  for (let i = 11; s >= 0; i++) {
     s -= min11;
     if (s < 0) {
       return result;
