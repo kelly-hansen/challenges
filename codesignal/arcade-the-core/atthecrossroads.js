@@ -11,6 +11,7 @@ function knapsackLight(value1, weight1, value2, weight2, maxW) {
     return 0;
   }
   var mostVal;
+  var leastVal;
   if (item1[0] > item2[0]) {
     mostVal = item1;
     leastVal = item2;
@@ -22,5 +23,13 @@ function knapsackLight(value1, weight1, value2, weight2, maxW) {
     return mostVal[0];
   } else {
     return leastVal[0];
+  }
+}
+
+function extraNumber(a, b, c) {
+  if (a === b) {
+    return c;
+  } else {
+    return a === c ? b : a;
   }
 }
