@@ -62,3 +62,7 @@ function phoneCall(min1, min2_10, min11, s) {
     result++;
   }
 }
+
+function isInfiniteProcess(a, b) {
+  return a > b || a % 2 !== b % 2;
+}
