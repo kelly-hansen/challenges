@@ -66,3 +66,7 @@ function phoneCall(min1, min2_10, min11, s) {
 function isInfiniteProcess(a, b) {
   return a > b || a % 2 !== b % 2;
 }
+
+function arithmeticExpression(a, b, c) {
+  return a + b === c || a - b === c || a * b === c || a / b === c;
+}
