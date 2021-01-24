@@ -70,3 +70,11 @@ function isInfiniteProcess(a, b) {
 function arithmeticExpression(a, b, c) {
   return a + b === c || a - b === c || a * b === c || a / b === c;
 }
+
+//incomplete
+function tennisSet(score1, score2) {
+  if (score1 > 7 || score2 > 7) {
+    return false;
+  }
+  return true;
+}
