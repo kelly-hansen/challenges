@@ -71,10 +71,22 @@ function arithmeticExpression(a, b, c) {
   return a + b === c || a - b === c || a * b === c || a / b === c;
 }
 
-//incomplete
 function tennisSet(score1, score2) {
   if (score1 > 7 || score2 > 7) {
     return false;
   }
-  return true;
+  const sum = score1 + score2;
+  if (score1 === 7 || score2 === 7) {
+    if (sum < 14 && sum > 11) {
+      return true;
+    }
+    return false;
+  }
+  if (score1 === 6 || score2 === 6) {
+    if (sum < 11) {
+      return true;
+    }
+    return false;
+  }
+  return false;
 }
