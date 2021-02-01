@@ -33,3 +33,27 @@ function extraNumber(a, b, c) {
     return a === c ? b : a;
   }
 }
+
+function tennisSet(score1, score2) {
+  if (score1 > 7 || score2 > 7) {
+    return false;
+  }
+  const sum = score1 + score2;
+  if (score1 === 7 || score2 === 7) {
+    if (sum < 14 && sum > 11) {
+      return true;
+    }
+    return false;
+  }
+  if (score1 === 6 || score2 === 6) {
+    if (sum < 11) {
+      return true;
+    }
+    return false;
+  }
+  return false;
+}
+
+function willYou(young, beautiful, loved) {
+  return (((young && beautiful) && !loved) || ((!young || !beautiful) && loved))
+}
