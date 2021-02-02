@@ -57,3 +57,7 @@ function tennisSet(score1, score2) {
 function willYou(young, beautiful, loved) {
   return (((young && beautiful) && !loved) || ((!young || !beautiful) && loved))
 }
+
+function metroCard(l) {
+  return l !== 31 ? [31] : [28, 30, 31];
+}
