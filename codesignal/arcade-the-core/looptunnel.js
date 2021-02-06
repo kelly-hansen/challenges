@@ -31,3 +31,21 @@ function magicalWell(a, b, n) {
   }
   return result;
 }
+
+function lineUp(commands) {
+  let result = 0;
+  let lCount = 0;
+  let rCount = 0;
+  for (let i = 0; i < commands.length; i++) {
+    if (commands[i] === 'L') {
+      lCount++;
+    }
+    if (commands[i] === 'R') {
+      rCount++;
+    }
+    if ((lCount % 2 === 0 && rCount % 2 === 0) || (lCount % 2 && rCount % 2)) {
+      result++;
+    }
+  }
+  return result;
+}
