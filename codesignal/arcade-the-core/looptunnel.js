@@ -9,3 +9,14 @@ function leastFactorial(n) {
     }
   }
 }
+
+function countSumOfTwoRepresentations2(n, l, r) {
+  let count = 0;
+  for (let a = l; a <= r; a++) {
+    const b = n - a;
+    if (b >= a && b >= l && b <= r) {
+      count++;
+    }
+  }
+  return count;
+}
