@@ -49,3 +49,17 @@ function lineUp(commands) {
   }
   return result;
 }
+
+function additionWithoutCarrying(param1, param2) {
+  const p1 = param1.toString().split('').reverse().join('');
+  const p2 = param2.toString().split('').reverse().join('');
+  const longest = Math.max(p1.length, p2.length);
+  let result = '';
+  for (let i = 0; i < longest; i++) {
+    const p1L = p1[i] ? parseInt(p1[i], 10) : 0;
+    const p2L = p2[i] ? parseInt(p2[i], 10) : 0;
+    let current = (p1L + p2L).toString();
+    result = current[current.length - 1] + result;
+  }
+  return parseInt(result, 10);
+}
