@@ -63,3 +63,12 @@ function additionWithoutCarrying(param1, param2) {
   }
   return parseInt(result, 10);
 }
+
+function appleBoxes(k) {
+  let red = 0;
+  let yellow = 0;
+  for (let i = 1; i <= k; i++) {
+    i % 2 ? yellow += i * i : red += i * i;
+  }
+  return red - yellow;
+}
