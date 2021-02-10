@@ -72,3 +72,17 @@ function appleBoxes(k) {
   }
   return red - yellow;
 }
+
+function increaseNumberRoundness(n) {
+  const n1 = n.toString();
+  let foundNon0 = false;
+  for (let i = n1.length - 1; i > 0; i--) {
+    if (!foundNon0 && n1[i] !== '0') {
+      foundNon0 = true;
+    }
+    if (foundNon0 && n1[i] === '0') {
+      return true;
+    }
+  }
+  return false;
+}
