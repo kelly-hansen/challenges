@@ -86,3 +86,27 @@ function increaseNumberRoundness(n) {
   }
   return false;
 }
+
+function rounders(n) {
+  const n1 = n.toString();
+  let result = '';
+  let roundUp = false;
+  for (let i = n1.length - 1; i > 0; i--) {
+    let current = parseInt(n1[i]);
+    if (roundUp) {
+      current++;
+    }
+    if (current >= 5) {
+      roundUp = true;
+    } else {
+      roundUp = false;
+    }
+    result = '0' + result;
+  }
+  if (roundUp) {
+    result = parseInt(n1[0], 10) + 1 + result;
+  } else {
+    result = n1[0] + result;
+  }
+  return parseInt(result, 10);
+}
