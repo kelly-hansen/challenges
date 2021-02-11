@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "preinstall": "echo 'ERROR: \"npm install\" must be run from the project root directory' && exit 1",
+        "lint": "npm run lint --prefix ../..",
+        "test": "node ../../node_modules/eslint/bin/eslint --quiet . && ../../node_modules/mocha/bin/mocha --reporter=list --bail",
+        "test:debug": "node ../../node_modules/eslint/bin/eslint --quiet . && cat ../test_debug.txt && ../../node_modules/mocha/bin/mocha --no-timeouts --colors --reporter=list --inspect-brk test.js",
+        "repl": "EXERCISE=stacks_intro_2 node ../repl"
+    }
+}
