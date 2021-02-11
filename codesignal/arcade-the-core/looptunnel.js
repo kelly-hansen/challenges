@@ -110,3 +110,16 @@ function rounders(n) {
   }
   return parseInt(result, 10);
 }
+
+function candles(candlesNumber, makeNew) {
+  let leftovers = candlesNumber;
+  let result = candlesNumber;
+  candlesNumber = 0;
+  while (leftovers >= makeNew) {
+    candlesNumber = Math.floor(leftovers / makeNew);
+    leftovers -= Math.floor(leftovers / makeNew) * makeNew;
+    result += candlesNumber;
+    leftovers += candlesNumber;
+  }
+  return result;
+}
