@@ -11,6 +11,16 @@ class BulkWordEditor {
             currentListItem = currentListItem.next;
         }
     }
+
+    render() {
+        let message = this.messageList.data;
+        let current = this.messageList;
+        while (current.next !== null) {
+            current = current.next;
+            message += ' ' + current.data;
+        }
+        return message;
+    }
 }
 
 module.exports = exports = BulkWordEditor;
