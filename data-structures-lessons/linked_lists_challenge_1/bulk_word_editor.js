@@ -97,6 +97,19 @@ class BulkWordEditor {
             }
         }
     }
+
+    prepend(targetWord, newWord) {
+        let current = this.messageList;
+        let previous;
+        while (current !== null) {
+            if (current.data.toLowerCase() === targetWord.toLowerCase()) {
+                previous.next = new LinkedListNode(newWord);
+                previous.next.next = current;
+            }
+            previous = current;
+            current = current.next;
+        }
+    }
 }
 
 module.exports = exports = BulkWordEditor;
