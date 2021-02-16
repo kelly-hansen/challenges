@@ -55,6 +55,34 @@ class BulkWordEditor {
             current = current.next;
         }
     }
+
+    swap(word1, word2) {
+        let current = this.messageList;
+        while (current !== null) {
+            const word = current.data;
+            let newWord;
+            if (word.toLowerCase() === word1.toLowerCase()) {
+                newWord = word2;
+            } else if (word.toLowerCase() === word2.toLowerCase()) {
+                newWord = word1;
+            }
+            if (newWord) {
+                let resultWord = '';
+                let upperCase;
+                for (let id = 0; id < newWord.length; id++) {
+                    if (word[id]) {
+                        upperCase = word[id] === word[id].toUpperCase();
+                    }
+                    const addLetter = upperCase
+                        ? newWord[id].toUpperCase()
+                        : newWord[id].toLowerCase();
+                    resultWord += addLetter;
+                }
+                current.data = resultWord;
+            }
+            current = current.next;
+        }
+    }
 }
 
 module.exports = exports = BulkWordEditor;
