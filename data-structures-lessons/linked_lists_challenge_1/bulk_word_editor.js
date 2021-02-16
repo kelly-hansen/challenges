@@ -83,6 +83,20 @@ class BulkWordEditor {
             current = current.next;
         }
     }
+
+    append(targetWord, newWord) {
+        let current = this.messageList;
+        while (current !== null) {
+            if (current.data.toLowerCase() === targetWord.toLowerCase()) {
+                const next = current.next;
+                current.next = new LinkedListNode(newWord);
+                current.next.next = next;
+                current = current.next.next;
+            } else {
+                current = current.next;
+            }
+        }
+    }
 }
 
 module.exports = exports = BulkWordEditor;
