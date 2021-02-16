@@ -21,6 +21,18 @@ class BulkWordEditor {
         }
         return message;
     }
+
+    count(word) {
+        let count = 0;
+        let current = this.messageList;
+        while (current !== null) {
+            if (current.data.toLowerCase() === word.toLowerCase()) {
+                count++;
+            }
+            current = current.next;
+        }
+        return count;
+    }
 }
 
 module.exports = exports = BulkWordEditor;
