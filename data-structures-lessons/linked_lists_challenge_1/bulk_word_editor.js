@@ -114,4 +114,27 @@ class BulkWordEditor {
         }
     }
 
+    remove(targetWord) {
+        let current = this.messageList;
+        while (current.data.toLowerCase() === targetWord.toLowerCase()) {
+            current = current.next;
+            if (!current) {
+                this.messageList = null;
+                return;
+            }
+        }
+        this.messageList = current;
+        let next = current.next;
+        while (next !== null) {
+            if (next.data.toLowerCase() === targetWord.toLowerCase()) {
+                current.next = next.next;
+                next = next.next;
+            } else {
+                current = current.next;
+                next = next.next;
+            }
+        }
+    }
+}
+
 module.exports = exports = BulkWordEditor;
