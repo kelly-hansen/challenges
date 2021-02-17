@@ -13,6 +13,9 @@ class BulkWordEditor {
     }
 
     render() {
+        if (!this.messageList) {
+            return '';
+        }
         let message = this.messageList.data;
         let current = this.messageList;
         while (current.next !== null) {
@@ -110,6 +113,5 @@ class BulkWordEditor {
             current = current.next;
         }
     }
-}
 
 module.exports = exports = BulkWordEditor;
