@@ -123,3 +123,7 @@ function candles(candlesNumber, makeNew) {
   }
   return result;
 }
+
+function countBlackCells(n, m) {
+
+}
