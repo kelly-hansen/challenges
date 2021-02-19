@@ -108,7 +108,17 @@ const jsonData = JSON.stringify(leaguesData);
 function convertJSONToCSV(jsonData) {
   const data = JSON.parse(jsonData);
   const leaguesArr = data.leagues;
-  const headers = Object.keys(leaguesArr[0]);
+  const headers = [];
+  for (const key in leaguesArr[0]) {
+    if (typeof leaguesArr[0][key] === 'object') {
+      for (const subKey in leaguesArr[0][key]) {
+        headers.push(subKey);
+      }
+    } else {
+      headers.push(key);
+    }
+  }
+  console.log(headers)
   let csv = headers.join(',') + '\n';
   leaguesArr.forEach(league => {
     let leagueCSVData = '';
@@ -120,7 +130,6 @@ function convertJSONToCSV(jsonData) {
     }
     csv += leagueCSVData + '\n';
   });
-  console.log(csv);
 }
 
 convertJSONToCSV(jsonData);
