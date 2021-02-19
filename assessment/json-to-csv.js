@@ -118,18 +118,24 @@ function convertJSONToCSV(jsonData) {
       headers.push(key);
     }
   }
-  console.log(headers)
   let csv = headers.join(',') + '\n';
   leaguesArr.forEach(league => {
     let leagueCSVData = '';
     for (let i = 0; i < headers.length; i++) {
-      leagueCSVData += league[headers[i]] !== undefined ? league[headers[i]] : 'N/A';
+      if (league[headers[i]] !== undefined) {
+        leagueCSVData += league[headers[i]];
+      } else if (league.seasonDateInfo[headers[i]] !== undefined) {
+        leagueCSVData += league.seasonDateInfo[headers[i]];
+      } else {
+        leagueCSVData += 'N/A';
+      }
       if (i !== headers.length - 1) {
         leagueCSVData += ',';
       }
     }
     csv += leagueCSVData + '\n';
   });
+  console.log(csv);
 }
 
 convertJSONToCSV(jsonData);
