@@ -1,5 +1,5 @@
-function hello() {
-  console.log('hello');''
+async function hello() {
+  return 'hello';
 }
 
-hello();
+console.log(hello());
