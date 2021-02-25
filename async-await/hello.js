@@ -2,4 +2,4 @@ async function hello() {
   return 'hello';
 }
 
-console.log(hello());
+hello().then(value => console.log(value));
