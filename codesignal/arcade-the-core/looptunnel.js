@@ -129,4 +129,11 @@ function countBlackCells(n, m) {
   for (let x = 0; x <= m; x++) {
     xLineValues.push(n - (n / m * x));
   }
+  let blackCells = 0;
+  for (let i = 1; i < xLineValues.length; i++) {
+    const high = Math.min(n, Number.isInteger(xLineValues[i - 1]) ? xLineValues[i - 1] + 1 : Math.ceil(xLineValues[i - 1]));
+    const low = Math.max(0, Number.isInteger(xLineValues[i]) ? xLineValues[i] - 1 : Math.floor(xLineValues[i]));
+    blackCells += high - low;
+  }
+  return blackCells;
 }
