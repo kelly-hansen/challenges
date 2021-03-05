@@ -125,5 +125,8 @@ function candles(candlesNumber, makeNew) {
 }
 
 function countBlackCells(n, m) {
-
+  let xLineValues = [];
+  for (let x = 0; x <= m; x++) {
+    xLineValues.push(n - (n / m * x));
+  }
 }
