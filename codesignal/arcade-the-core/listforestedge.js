@@ -14,3 +14,13 @@ function arrayReplace(inputArray, elemToReplace, substitutionElem) {
   }
   return inputArray;
 }
+
+function firstReverseTry(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+  const first = arr.shift();
+  arr.unshift(arr.pop());
+  arr.push(first);
+  return arr;
+}
