@@ -24,3 +24,7 @@ function firstReverseTry(arr) {
   arr.push(first);
   return arr;
 }
+
+function concatenateArrays(a, b) {
+  return a.concat(b);
+}
