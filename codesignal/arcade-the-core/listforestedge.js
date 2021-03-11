@@ -33,3 +33,13 @@ function removeArrayPart(inputArray, l, r) {
   inputArray.splice(l, r - l + 1);
   return inputArray;
 }
+
+function isSmooth(arr) {
+  let middle;
+  if (arr.length % 2) {
+    middle = arr[Math.floor(arr.length / 2)];
+  } else {
+    middle = arr[arr.length / 2] + arr[arr.length / 2 - 1];
+  }
+  return arr[0] === middle && arr[arr.length - 1] === middle;
+}
