@@ -43,3 +43,11 @@ function isSmooth(arr) {
   }
   return arr[0] === middle && arr[arr.length - 1] === middle;
 }
+
+function replaceMiddle(arr) {
+  if (!(arr.length % 2)) {
+    const middle = arr[arr.length / 2] + arr[arr.length / 2 - 1];
+    arr.splice(arr.length / 2 - 1, 2, middle);
+  }
+  return arr;
+}
