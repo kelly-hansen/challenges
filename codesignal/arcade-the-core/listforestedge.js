@@ -28,3 +28,8 @@ function firstReverseTry(arr) {
 function concatenateArrays(a, b) {
   return a.concat(b);
 }
+
+function removeArrayPart(inputArray, l, r) {
+  inputArray.splice(l, r - l + 1);
+  return inputArray;
+}
