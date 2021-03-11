@@ -51,3 +51,9 @@ function replaceMiddle(arr) {
   }
   return arr;
 }
+
+function makeArrayConsecutive2(statues) {
+  statues.sort((x, y) => x - y);
+  const diff = statues[statues.length - 1] - statues[0];
+  return diff - statues.length + 1;
+}
