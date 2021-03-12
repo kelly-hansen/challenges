@@ -14,3 +14,21 @@ function isPower(n) {
     }
   }
 }
+
+function isSumOfConsecutive2(n) {
+  let result = 0;
+  for (let i = 1; i < n; i++) {
+    const consecutive = [i];
+    let sum = consecutive.reduce((x, y) => x + y);
+    let j = i + 1;
+    while (sum <= n) {
+      consecutive.push(j);
+      sum = consecutive.reduce((x, y) => x + y);
+      if (consecutive.length >= 2 && sum === n) {
+        result++;
+      }
+      j++;
+    }
+  }
+  return result;
+}
