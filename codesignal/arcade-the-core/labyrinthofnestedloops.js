@@ -32,3 +32,30 @@ function isSumOfConsecutive2(n) {
   }
   return result;
 }
+
+function squareDigitsSequence(a0) {
+  let result = 1;
+  const used = [a0];
+
+  function squaredSum(num) {
+    let digitsStrings = num.toString().split('');
+    let digitsArr = [];
+    digitsStrings.forEach(x => digitsArr.push(Math.pow(parseInt(x, 10), 2)));
+    return digitsArr.reduce((x, y) => x + y);
+  }
+
+  let sum = squaredSum(a0);
+  let finished = false;
+  while (!finished) {
+    result++;
+    for (let i = 0; i < used.length; i++) {
+      if (used[i] === sum) {
+        finished = true;
+        break;
+      }
+    }
+    used.push(sum);
+    sum = squaredSum(sum);
+  }
+  return result;
+}
