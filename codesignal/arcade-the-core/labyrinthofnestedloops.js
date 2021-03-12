@@ -59,3 +59,13 @@ function squareDigitsSequence(a0) {
   }
   return result;
 }
+
+function pagesNumberingWithInk(current, numberOfDigits) {
+  while (numberOfDigits > 0) {
+    numberOfDigits -= current.toString().length;
+    if (numberOfDigits >= 0) {
+      current++;
+    }
+  }
+  return current - 1;
+}
