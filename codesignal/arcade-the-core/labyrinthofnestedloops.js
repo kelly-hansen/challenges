@@ -69,3 +69,26 @@ function pagesNumberingWithInk(current, numberOfDigits) {
   }
   return current - 1;
 }
+
+function weakNumbers(n) {
+  const divisorsArr = [];
+  const weaknessArr = [];
+  for (let i = 1; i <= n; i++) {
+    let divisors = 1;
+    for (let x = 1; x < i; x++) {
+      if (!(i % x)) {
+        divisors++;
+      }
+    }
+    divisorsArr.push(divisors);
+    let currentWeakness = 0;
+    for (let x = 0; x < divisorsArr.length; x++) {
+      if (divisorsArr[x] > divisors) {
+        currentWeakness++;
+      }
+    }
+    weaknessArr.push(currentWeakness);
+  }
+  const maxWeakness = weaknessArr.reduce((a, b) => Math.max(a, b));
+  return [maxWeakness, weaknessArr.filter(x => x === maxWeakness).length];
+}
