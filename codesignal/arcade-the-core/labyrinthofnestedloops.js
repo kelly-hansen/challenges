@@ -92,3 +92,10 @@ function weakNumbers(n) {
   const maxWeakness = weaknessArr.reduce((a, b) => Math.max(a, b));
   return [maxWeakness, weaknessArr.filter(x => x === maxWeakness).length];
 }
+
+function rectangleRotation(a, b) {
+  const aLength = Math.sqrt(Math.pow(a, 2) / 2);
+  const bLength = Math.sqrt(Math.pow(b, 2) / 2);
+  console.log(aLength, bLength);
+  return Math.ceil(aLength) * Math.ceil(bLength) + Math.floor(aLength) * Math.floor(bLength);
+}
