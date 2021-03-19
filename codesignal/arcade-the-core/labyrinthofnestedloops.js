@@ -96,6 +96,11 @@ function weakNumbers(n) {
 function rectangleRotation(a, b) {
   const aLength = Math.sqrt(Math.pow(a, 2) / 2);
   const bLength = Math.sqrt(Math.pow(b, 2) / 2);
-  console.log(aLength, bLength);
-  return Math.ceil(aLength) * Math.ceil(bLength) + Math.floor(aLength) * Math.floor(bLength);
+  const result = Math.ceil(aLength) * Math.ceil(bLength) + Math.floor(aLength) * Math.floor(bLength);
+
+  function test(length) {
+    return length / 2 - Math.floor(length / 2) >= .5;
+  }
+
+  return test(aLength) !== test(bLength) ? result - 1 : result;
 }
