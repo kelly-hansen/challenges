@@ -31,6 +31,7 @@ var addTwoNumbers = function (l1, l2) {
   }
 };
 
+//incomplete
 var reverse = function (x) {
   return x.toString().split('').reverse().join('');
 };
