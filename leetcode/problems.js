@@ -35,3 +35,22 @@ var addTwoNumbers = function (l1, l2) {
 var reverse = function (x) {
   return x.toString().split('').reverse().join('');
 };
+
+var maxArea = function (height) {
+  let result = 0;
+  let i = 0;
+  let j = height.length - 1;
+  while (i < j) {
+    const minHeight = Math.min(height[i], height[j]);
+    const area = minHeight * (j - i);
+    if (area > result) {
+      result = area;
+    }
+    if (height[i] > height[j]) {
+      j--;
+    } else {
+      i++;
+    }
+  }
+  return result;
+};
