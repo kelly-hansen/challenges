@@ -18,3 +18,13 @@ function isCaseInsensitivePalindrome(inputString) {
   const str = inputString.toUpperCase();
   return str === str.split('').reverse().join('');
 }
+
+function findEmailDomain(address) {
+  let domain;
+  for (let i = 0; i < address.length; i++) {
+    if (address[i] === '@') {
+      domain = address.substring(i + 1);
+    }
+  }
+  return domain;
+}
