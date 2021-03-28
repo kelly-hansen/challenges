@@ -13,3 +13,8 @@ function isTandemRepeat(inputString) {
   const firstHalf = inputString.substring(inputString.length / 2);
   return firstHalf + firstHalf === inputString;
 }
+
+function isCaseInsensitivePalindrome(inputString) {
+  const str = inputString.toUpperCase();
+  return str === str.split('').reverse().join('');
+}
