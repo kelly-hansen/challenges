@@ -28,3 +28,14 @@ function findEmailDomain(address) {
   }
   return domain;
 }
+
+function htmlEndTagByStartTag(startTag) {
+  let tag;
+  for (let i = 0; i < startTag.length; i++) {
+    if (startTag[i] === ' ' || startTag[i] === '>') {
+      tag = startTag.substring(1, i);
+      break;
+    }
+  }
+  return `</${tag}>`;
+}
