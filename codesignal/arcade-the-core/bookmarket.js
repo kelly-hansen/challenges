@@ -39,3 +39,22 @@ function htmlEndTagByStartTag(startTag) {
   }
   return `</${tag}>`;
 }
+
+function isMAC48Address(inputString) {
+  if (inputString.length !== 17) {
+    return false;
+  }
+  for (let i = 0; i < inputString.length; i++) {
+    if ((i + 1) % 3 === 0) {
+      if (inputString[i] !== '-') {
+        return false;
+      }
+    } else {
+      const regex = /[A-F0-9]/;
+      if (!regex.test(inputString[i])) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
