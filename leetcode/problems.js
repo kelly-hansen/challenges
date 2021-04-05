@@ -54,3 +54,9 @@ var maxArea = function (height) {
   }
   return result;
 };
+
+var maximumWealth = function (accounts) {
+  return accounts.reduce((a, b, i) => {
+    return Math.max(a, accounts[i].reduce((x, y) => x + y));
+  }, 0);
+};
