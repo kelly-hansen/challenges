@@ -60,3 +60,12 @@ var maximumWealth = function (accounts) {
     return Math.max(a, accounts[i].reduce((x, y) => x + y));
   }, 0);
 };
+
+var kidsWithCandies = function (candies, extraCandies) {
+  const greatest = candies.reduce((a, b) => Math.max(a, b));
+  const result = [];
+  for (let i = 0; i < candies.length; i++) {
+    result.push(candies[i] + extraCandies >= greatest ? true : false);
+  }
+  return result;
+};
