@@ -58,3 +58,24 @@ function isMAC48Address(inputString) {
   }
   return true;
 }
+
+function isUnstablePair(f1, f2) {
+  let minLength = Math.min(f1.length, f2.length);
+  let caseSensitive;
+  let nonCaseSensitive;
+  for (let i = 0; i < minLength; i++) {
+    if (!caseSensitive && f1[i] !== f2[i]) {
+      caseSensitive = f1[i] < f2[i] ? 1 : 2;
+    }
+    if (!nonCaseSensitive && f1[i].toUpperCase() !== f2[i].toUpperCase()) {
+      nonCaseSensitive = f1[i].toUpperCase() < f2[i].toUpperCase() ? 1 : 2;
+    }
+  }
+  if (!caseSensitive) {
+    caseSensitive = f1.length < f2.length ? 1 : 2;
+  }
+  if (!nonCaseSensitive) {
+    nonCaseSensitive = f1.length < f2.length ? 1 : 2;
+  }
+  return nonCaseSensitive !== caseSensitive;
+}
