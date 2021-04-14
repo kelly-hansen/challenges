@@ -1,15 +1,14 @@
 // Timeout
 
 function stringsConstruction(a, b) {
-  let arrA = a.split('');
   let arrB = b.split('');
   let count = 0;
 
-  for (let i = 0; i < arrA.length; i++) {
+  for (let i = 0; i < a.length; i++) {
     for (let j = 0; j < arrB.length; j++) {
-      if (arrA[i] === arrB[j]) {
+      if (a[i] === arrB[j]) {
         arrB.splice(j, 1);
-        if (i === arrA.length - 1) {
+        if (i === a.length - 1) {
           count++;
           i = -1;
         }
