@@ -51,3 +51,32 @@ function stringsConstruction(a, b) {
   }
   return Math.min(...charCounts);
 }
+
+function isSubstitutionCipher(string1, string2) {
+  const letterIndexes = {};
+  for (let i = 0; i < string1.length; i++) {
+    if (!letterIndexes[string1[i]]) {
+      letterIndexes[string1[i]] = [];
+    }
+    letterIndexes[string1[i]].push(i);
+  }
+  console.log(letterIndexes);
+  const lettersArr1 = [];
+  const lettersArr2 = [];
+  for (const letter in letterIndexes) {
+    const currentLetter = string2[letterIndexes[letter][0]];
+    for (let i = 1; i < letterIndexes[letter].length; i++) {
+      if (string2[letterIndexes[letter][i]] !== currentLetter) {
+        return false;
+      }
+    }
+    for (let i = 0; i < lettersArr1.length; i++) {
+      if (lettersArr1[i] === letter || lettersArr2[i] === currentLetter) {
+        return false;
+      }
+    }
+    lettersArr1.push(letter);
+    lettersArr2.push(currentLetter);
+  }
+  return true;
+}
