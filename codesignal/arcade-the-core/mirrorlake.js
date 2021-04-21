@@ -80,3 +80,14 @@ function isSubstitutionCipher(string1, string2) {
   }
   return true;
 }
+
+function createAnagram(s, t) {
+  t = t.split('');
+  for (let i = 0; i < s.length; i++) {
+    const ind = t.indexOf(s[i]);
+    if (ind !== -1) {
+      t.splice(ind, 1);
+    }
+  }
+  return t.length;
+}
