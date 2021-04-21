@@ -91,3 +91,57 @@ function createAnagram(s, t) {
   }
   return t.length;
 }
+
+function constructSquare(s) {
+
+  function structureString(arr) {
+    let used = [];
+    let structure = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (used.indexOf(arr[i]) === -1) {
+        used.push(arr[i]);
+        let count = 1;
+        for (let j = i + 1; j < arr.length; j++) {
+          if (arr[j] === arr[i]) {
+            count++;
+          }
+        }
+        structure.push(count);
+      }
+    }
+    return structure;
+  }
+
+  const sStructure = structureString(s.split('')).sort();
+
+  let largest = '';
+  for (let i = 0; i < s.length; i++) {
+    largest += 9;
+  }
+  largest = parseInt(largest, 10);
+
+  let sqrt = 1;
+  while (sqrt * sqrt <= largest) {
+    sqrt++;
+  }
+  sqrt--;
+
+  while (sqrt > 0) {
+    let num = sqrt * sqrt;
+    if (num.toString().length < s.length) {
+      return -1;
+    }
+    let numStructure = structureString(num.toString().split('')).sort();
+    for (let i = 0; i < numStructure.length; i++) {
+      if (numStructure[i] !== sStructure[i]) {
+        break;
+      }
+      if (i === numStructure.length - 1) {
+        return num;
+      }
+    }
+
+    sqrt--;
+  }
+  return -1;
+}
