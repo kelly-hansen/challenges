@@ -145,3 +145,20 @@ function constructSquare(s) {
   }
   return -1;
 }
+
+function numbersGrouping(a) {
+  a = a.sort((a, b) => a - b);
+  console.log(a);
+  let groups = 0;
+  let groupMax = 10000;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] >= groupMax - 9999) {
+      while (a[i] > groupMax) {
+        groupMax += 10000;
+      }
+      groups++;
+      groupMax += 10000;
+    }
+  }
+  return groups + a.length;
+}
