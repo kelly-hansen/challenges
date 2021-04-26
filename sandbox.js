@@ -1,6 +1,11 @@
-const removeFirst = arr => arr.shift();
+const omit = require('lodash/omit');
 
-const array1 = [1, 2, 3];
+const user = {
+  name: 'Kelly',
+  username: 'kellyhansen',
+  password: 'mypassword'
+};
 
-console.log(removeFirst(array1));
-console.log(array1);
+const nameOnly = omit(user, ['username', 'password']);
+
+console.log(nameOnly);
