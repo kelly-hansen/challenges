@@ -162,3 +162,30 @@ function numbersGrouping(a) {
   }
   return groups + a.length;
 }
+
+function differentSquares(m) {
+  let result = [];
+  for (let i = 0; i < m.length - 1; i++) {
+    for (let j = 0; j < m[0].length - 1; j++) {
+      const square = [m[i][j], m[i][j + 1], m[i + 1][j], m[i + 1][j + 1]];
+      let match = false;
+      for (let k = 0; k < result.length; k++) {
+        for (let l = 0; l < square.length; l++) {
+          if (square[l] !== result[k][l]) {
+            break;
+          }
+          if (l === square.length - 1) {
+            match = true;
+          }
+        }
+        if (match) {
+          break;
+        }
+      }
+      if (!match) {
+        result.push(square);
+      }
+    }
+  }
+  return result.length;
+}
