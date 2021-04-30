@@ -74,7 +74,9 @@ const SignupForm = () => {
       />
       {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
 
-      <button type="submit">Submit</button>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
     </form>
   );
 };
