@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useFormik } from "formik";
 import "./styles.css";
+import Carpentr from './carpentr';
 
 const validate = values => {
   const errors = {};
@@ -82,7 +83,7 @@ const SignupForm = () => {
 };
 
 function App() {
-  return <SignupForm />;
+  return <Carpentr />;
 }
 
 const rootElement = document.getElementById("root");
