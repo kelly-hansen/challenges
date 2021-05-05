@@ -17,6 +17,20 @@ const data = [
   { firstName: 'Cameron', lastName: 'Frye', dob: '7-1-1956', occupation: 'student' },
   { firstName: 'Ferris', lastName: 'Bueller', dob: '3-21-1962', occupation: 'student' },
   { firstName: 'Cameron', lastName: 'Frye', dob: '7-1-1956', occupation: 'student' },
+  { firstName: 'Ferris', lastName: 'Bueller', dob: '3-21-1962', occupation: 'student' },
+  { firstName: 'Cameron', lastName: 'Frye', dob: '7-1-1956', occupation: 'student' },
+  { firstName: 'Ferris', lastName: 'Bueller', dob: '3-21-1962', occupation: 'student' },
+  { firstName: 'Cameron', lastName: 'Frye', dob: '7-1-1956', occupation: 'student' },
+  { firstName: 'Ferris', lastName: 'Bueller', dob: '3-21-1962', occupation: 'student' },
+  { firstName: 'Cameron', lastName: 'Frye', dob: '7-1-1956', occupation: 'student' },
+  { firstName: 'Ferris', lastName: 'Bueller', dob: '3-21-1962', occupation: 'student' },
+  { firstName: 'Cameron', lastName: 'Frye', dob: '7-1-1956', occupation: 'student' },
+  { firstName: 'Ferris', lastName: 'Bueller', dob: '3-21-1962', occupation: 'student' },
+  { firstName: 'Cameron', lastName: 'Frye', dob: '7-1-1956', occupation: 'student' },
+  { firstName: 'Ferris', lastName: 'Bueller', dob: '3-21-1962', occupation: 'student' },
+  { firstName: 'Cameron', lastName: 'Frye', dob: '7-1-1956', occupation: 'student' },
+  { firstName: 'Ferris', lastName: 'Bueller', dob: '3-21-1962', occupation: 'student' },
+  { firstName: 'Cameron', lastName: 'Frye', dob: '7-1-1956', occupation: 'student' },
   { firstName: 'Sloane', lastName: 'Peterson', dob: '6-19-1967', occupation: 'student' }
 ]
 
@@ -78,7 +92,7 @@ const data = [
               <li
                 className={payload.prevDisabled ? 'page-item invisible' : 'page-item'}
                 onClick={() => { payload.setCurrentPage(payload.currentPage - 1) }}>
-                <a href="" className='page-link' aria-label='Next'>
+                <a className='page-link' aria-label='Next'>
                   <span aria-hidden='true'>&laquo;</span>
                   <span className='sr-only'>Previous</span>
                 </a>
@@ -95,7 +109,7 @@ const data = [
               <li
                 className={payload.nextDisabled ? 'page-item invisible' : 'page-item'}
                 onClick={() => { payload.setCurrentPage(payload.currentPage + 1) }}>
-                <a href="" className='page-link' aria-label='Next'>
+                <a className='page-link' aria-label='Next'>
                   <span aria-hidden='true'>&raquo;</span>
                   <span className='sr-only'>Next</span>
                 </a>
