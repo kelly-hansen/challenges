@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Stepper from '../src/index.js';
+import Stepper from 'react-stepper-horizontal';
 
 class ReactStepper extends Component {
   constructor() {
