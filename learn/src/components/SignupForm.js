@@ -26,18 +26,9 @@ const validate = values => {
 };
 
 const SignupForm = () => {
-  return (
-    <Formik
-      initialValues={{
-        firstName: '',
-        lastName: '',
-        email: ''
-      }}
-      onSubmit={values => {
-          alert(JSON.stringify(values, null, 2))
-        }
-      }
-    >
+
+  const renderForm = ({ handleBlur, handleChange, handleSubmit, values, errors, touched }) => {
+    return (
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">First Name</label>
         <input
@@ -76,6 +67,22 @@ const SignupForm = () => {
           <button type="submit">Submit</button>
         </div>
       </form>
+    )
+  }
+
+  return (
+    <Formik
+      initialValues={{
+        firstName: '',
+        lastName: '',
+        email: ''
+      }}
+      onSubmit={values => {
+          alert(JSON.stringify(values, null, 2))
+        }
+      }
+    >
+      {renderForm}
     </Formik>
   );
 };
